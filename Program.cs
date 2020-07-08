@@ -6,19 +6,19 @@ namespace primeira_aula
     {
         static void Main(string[] args)
         {
-            string myText = "salve";
-            int myNumber = 8;
-            float myPrice = 4.099f;
-            bool myBoolean = myPrice == myNumber;
+            Console.WriteLine("Insira sua idade:");
+            string input = Console.ReadLine();
 
-            Console.WriteLine("Você é maior de idade?");
-            var result = Console.ReadLine();
+            int userAge = Int32.Parse(input);
 
-            myBoolean = result == "sim";
+            string msg = "";
+            if (userAge > 15 & userAge < 51) {
+                msg = "Você pode participar.";
+            } else {
+                msg = "Você NÃO pode participar.";
+            }
 
-            Console.WriteLine(myText);
-            Console.WriteLine(myBoolean);
-            Console.WriteLine(myBoolean);
+            Console.WriteLine(msg);
         }
     }
 }
