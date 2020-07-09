@@ -1,4 +1,4 @@
-# 8-) **PROJETO ENTRA21** 8-)
+# **PROJETO ENTRA21**
 
 ### Escrevendo e Lendo do Console:
 
