@@ -7,10 +7,10 @@ namespace primeira_aula
         static void Main(string[] args)
         {
             Console.WriteLine("Insira sua idade:");
-        check:
+        input:
             bool number = Int32.TryParse(Console.ReadLine(), out int userAge);
             if (number == false) {Console.WriteLine("ERRO, insira um número inteiro.");
-            goto check;}
+            goto input;}
             Console.WriteLine(userAge > 15 && userAge < 51 ? "Pode participar." : "NÃO pode participar.");
         }
     }
