@@ -7,18 +7,11 @@ namespace primeira_aula
         static void Main(string[] args)
         {
             Console.WriteLine("Insira sua idade:");
-            string input = Console.ReadLine();
-
-            int userAge = Int32.Parse(input);
-
-            string msg = "";
-            if (userAge > 15 & userAge < 51) {
-                msg = "Você pode participar.";
-            } else {
-                msg = "Você NÃO pode participar.";
-            }
-
-            Console.WriteLine(msg);
+        check:
+            bool number = Int32.TryParse(Console.ReadLine(), out int userAge);
+            if (number == false) {Console.WriteLine("ERRO, insira um número inteiro.");
+            goto check;}
+            Console.WriteLine(userAge > 15 && userAge < 51 ? "Pode participar." : "NÃO pode participar.");
         }
     }
 }
