@@ -12,8 +12,6 @@ namespace primeira_aula
             if (number == false) {Console.WriteLine("ERRO, insira um número inteiro.");
             goto input;}
             Console.WriteLine(userAge > 15 && userAge < 51 ? "Pode participar." : "NÃO pode participar.");
-
-            Console.WriteLine(5^3);
         }
     }
 }
