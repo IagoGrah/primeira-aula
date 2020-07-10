@@ -113,6 +113,8 @@ UNDO: Ctrl + Z
 
 REDO: Ctrl + Y
 
+Abrir o terminal: Ctrl + '
+
 ## Depurando a Aplicação:
 1. Debug/Run -> Settings -> '.Net Core'
 2. launch.json -> "console": "integratedTerminal";
