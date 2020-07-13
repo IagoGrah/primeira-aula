@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace primeira_aula
 {
@@ -6,14 +7,15 @@ namespace primeira_aula
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Insira sua idade:");
-        input:
-            if (Int32.TryParse(Console.ReadLine(), out int userAge) == false)
+            var names = new string[3];
+
+            Console.WriteLine("Digite três nomes:");
+            while (names.Count(s => s != null) < 3)
             {
-                Console.WriteLine("ERRO, insira um número inteiro.");
-                goto input;
+                names[names.Count(s => s != null)] = Console.ReadLine();
             }
-            Console.WriteLine(userAge > 15 && userAge < 51 ? "Pode participar." : "NÃO pode participar.");
+            
+            Console.WriteLine($"Olá, {names[0]}, {names[1]} e {names[2]}.");
         }
     }
 }
