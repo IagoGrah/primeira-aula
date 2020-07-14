@@ -83,7 +83,7 @@ namespace primeira_aula
             for (int i=0; i<5; i++)
             {
                 System.Console.WriteLine($"Nome da Mulher {i+1}:");
-                nomes[i] = Console.ReadLine();
+                Console.ReadLine();
                 System.Console.WriteLine($"Idade da Mulher {i+1}:");
                 idades[i] = Int32.Parse(Console.ReadLine());
             }
