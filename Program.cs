@@ -5,17 +5,169 @@ namespace primeira_aula
 {
     class Program
     {
+        static void qUm()
+        {
+            Console.WriteLine("Crescente:");
+
+            for (int i=1; i<=10; i++)
+            {
+                Console.Write(i+" ");
+            }
+
+            Console.WriteLine("\nDecrescente:");
+
+             for (int i=10; i>=1; i--)
+            {
+                Console.Write(i+" ");
+            }
+
+            Console.WriteLine("\nCrescente sem pares:");
+            
+            for (int i=1; i<=10; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    Console.Write(i+" ");
+                }
+            }
+        }
+        
+        static void qDois()
+        {
+            int count = 0;
+            for (int i=1; i<=100; i++)
+            {
+                count += i;
+            }
+            Console.WriteLine(count);
+        }
+
+        static void qTres()
+        {
+            for (int i=1; i<200; i++)
+            {
+                if (i%2!=0) {Console.Write(i+" ");}
+            }
+        }
+
+        static void qQuatro()
+        {
+            string userInput = "";
+            double counter = 0;
+            double sum = 0;
+            double ageInput = 0;
+            
+            Console.WriteLine("Insira as idades dos alunos, quando terminar insira 0");
+            
+            while (userInput != "0")
+            {
+              waiting:
+                userInput = Console.ReadLine();
+                bool isIt = Double.TryParse(userInput, out ageInput);
+                if (!isIt)
+                {
+                    Console.WriteLine("ERRO, insira um número inteiro.");
+                    goto waiting;    
+                }
+                sum += ageInput;
+                counter++;
+            }
+            counter--;
+            Console.WriteLine($"A média de idade dos {counter} alunos é {sum/counter}.");
+        }
+
+        static void qCinco()
+        {
+            int[] idades = new int[5];
+
+            for (int i=0; i<5; i++)
+            {
+                System.Console.WriteLine($"Nome da Mulher {i+1}:");
+                nomes[i] = Console.ReadLine();
+                System.Console.WriteLine($"Idade da Mulher {i+1}:");
+                idades[i] = Int32.Parse(Console.ReadLine());
+            }
+            int naFaixa = 0;
+            for (int i=0; i<5; i++)
+            {
+                if (idades[i] < 36 && idades[i] > 17)
+                {
+                    naFaixa++;
+                }
+            }
+            Console.WriteLine($"{naFaixa*20}% das mulheres estão na faixa entre 18 e 35 anos.");
+        }
+
+        static void qSeis()
+        {
+            string candidato1 = "";
+            string candidato2 = "";
+            int votos1 = 0;
+            int votos2 = 0;
+          
+          menu:
+            Console.WriteLine("Digite C para CADASTRAR, V para VOTAR, ou A para apurar:");
+            var menuInput = Console.ReadLine();
+            if (menuInput == "C") {
+                goto modoCadastro;
+            } else if (menuInput == "V") {
+                goto modoVoto;
+            } else if (menuInput == "A") {
+                goto modoApura;
+            } else {
+                Console.WriteLine("ERRO");
+                goto menu;
+            };
+          
+          modoCadastro:
+            Console.WriteLine("Insira a Senha:");
+            if (Console.ReadLine() != "Pa$$w0rd")
+            {
+                Console.WriteLine("SENHA INCORRETA");
+                goto modoCadastro;
+            }
+            Console.WriteLine("Insira o nome do candidato 1:");
+            candidato1 = Console.ReadLine();
+            Console.WriteLine("Insira o nome do candidato 2:");
+            candidato2 = Console.ReadLine();
+            Console.WriteLine("CADASTRO COMPLETO");
+            goto menu;
+
+          modoVoto:
+            if (candidato1 == "" || candidato2 == "")
+            {
+                Console.WriteLine("CANDIDATOS NÃO CADASTRADOS");
+                goto menu;
+            }
+            Console.WriteLine($"Digite 1 para votar em {candidato1}, ou digite 2 para votar em {candidato2}:");
+            var userVote = Console.ReadLine();
+            if (userVote == "1") { votos1++; }
+            else if(userVote == "2") { votos2++; }
+            else {
+                Console.WriteLine("ERRO");
+                goto modoVoto;
+            }
+            Console.WriteLine("VOTO CONTABILIZADO");
+            goto menu;
+
+          modoApura:
+            if (votos1>votos2) 
+            { 
+                Console.WriteLine($"{candidato1} venceu!");
+            }
+            else if (votos2>votos1)
+            {
+                Console.WriteLine($"{candidato2} venceu!");
+            }
+            else
+            {
+                Console.WriteLine("SEGUNDO TURNO!");
+            }
+        }
+
         static void Main(string[] args)
         {
-            var names = new string[3];
-
-            Console.WriteLine("Digite três nomes:");
-            while (names.Count(s => s != null) < 3)
-            {
-                names[names.Count(s => s != null)] = Console.ReadLine();
-            }
-            
-            Console.WriteLine($"Olá, {names[0]}, {names[1]} e {names[2]}.");
+            qSeis();
         }
     }
 }
