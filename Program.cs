@@ -4,7 +4,7 @@ namespace primeira_aula
 {
     class Program
     {
-        static void qUm()
+        static void xUm()
         {
             Console.WriteLine("Crescente:");
 
@@ -31,7 +31,7 @@ namespace primeira_aula
             }
         }
         
-        static void qDois()
+        static void xDois()
         {
             int count = 0;
             for (int i=1; i<=100; i++)
@@ -41,7 +41,7 @@ namespace primeira_aula
             Console.WriteLine(count);
         }
 
-        static void qTres()
+        static void xTres()
         {
             for (int i=1; i<200; i++)
             {
@@ -49,7 +49,7 @@ namespace primeira_aula
             }
         }
 
-        static void qQuatro()
+        static void xQuatro()
         {
             string userInput = "";
             double counter = 0;
@@ -75,7 +75,7 @@ namespace primeira_aula
             Console.WriteLine($"A média de idade dos {counter} alunos é {(sum/counter).ToString("F")}.");
         }
 
-        static void qCinco()
+        static void xCinco()
         {
             int[] idades = new int[5];
 
@@ -97,7 +97,7 @@ namespace primeira_aula
             Console.WriteLine($"{naFaixa*20}% das mulheres estão na faixa entre 18 e 35 anos.");
         }
 
-        static void qSeis()
+        static void xSeis()
         {
             string candidato1 = "";
             string candidato2 = "";
@@ -189,7 +189,7 @@ namespace primeira_aula
             }
         }
 
-        static void qSete()
+        static void xSete()
         {
             int cigDia = 0;
             int anos = 0;
@@ -206,7 +206,7 @@ namespace primeira_aula
             Console.WriteLine($"Foram gastos R${dinheiroGasto.ToString("F")}.");
         }
 
-        static void qOito()
+        static void xOito()
         {
             Console.WriteLine("X:");
             double x = Double.Parse(Console.ReadLine());
@@ -223,7 +223,7 @@ namespace primeira_aula
             }
         }
 
-        static void qNove()
+        static void xNove()
         {
             Console.WriteLine("X:");
             double x = Double.Parse(Console.ReadLine());
@@ -235,9 +235,109 @@ namespace primeira_aula
             Console.WriteLine(x > (y+z) ? "X é maior que a soma de Y e Z" : "X não é maior que a soma de Y e Z");
         }
 
+        static void xDez()
+        {
+            System.Console.WriteLine("Insira um número:");
+            double A = Double.Parse(Console.ReadLine());
+            System.Console.WriteLine("Insira outro número:");
+            double B = Double.Parse(Console.ReadLine());
+
+            if (A>B)
+            {
+                System.Console.WriteLine($"{A} é maior que {B}.");
+            } else if (B>A)
+            {
+                System.Console.WriteLine($"{B} é maior que {A}.");
+            } else
+            {
+                System.Console.WriteLine($"{A} é igual a {B}.");
+            }
+        }
+
+        static void xOnze()
+        {
+            System.Console.WriteLine("Divisor:");
+            double A = Double.Parse(Console.ReadLine());
+            System.Console.WriteLine("Dividendo:");
+            double B = Double.Parse(Console.ReadLine());
+
+            if (B!=0)
+            {
+                Console.WriteLine("Quociente:");
+                Console.WriteLine(A/B);
+            }
+            else
+            {
+                Console.WriteLine("DIVISÃO POR ZERO!");
+            }
+        }
+
+        static void xDoze()
+        {
+            System.Console.WriteLine("Insira quatro números:");
+            double num1 = Double.Parse(Console.ReadLine());
+            double num2 = Double.Parse(Console.ReadLine());
+            double num3 = Double.Parse(Console.ReadLine());
+            double num4 = Double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Soma: {num1+num2+num3+num4}");
+        }
+
+        static void xTreze()
+        {
+            double biggest = 0.0;
+            System.Console.WriteLine("Insira dez números:");
+            for (int c=1; c<=10; c++)
+            {
+                double input = Double.Parse(Console.ReadLine());
+                if (input > biggest) {biggest = input;}
+            }
+            System.Console.WriteLine($"O maior número é {biggest}.");
+        }
+
+        static void xQuatorze()
+        {
+            double[] inputs = new double[3];
+
+            Console.WriteLine("Insira três valores:");
+            for (int i=0; i<3; i++)
+            {
+                inputs[i] = Double.Parse(Console.ReadLine());
+            }
+            Array.Sort(inputs);
+            Console.WriteLine();
+            Console.WriteLine($"{inputs[0]} < {inputs[1]} < {inputs[2]}");
+        }
+
+        static void xQuinze()
+        {
+            double[] inputs = new double[10];
+            Console.WriteLine("Insira dez dígitos");
+            for (int i=0; i<10; i++)
+            {
+                inputs[i] = Double.Parse(Console.ReadLine());
+            }
+            
+            int multi3 = 0;
+            int multi5 = 0;
+            for (int i=0; i<10; i++)
+            {
+                if (inputs[i] != 0) {
+                if (inputs[i] % 3 == 0) {multi3++;}
+                if (inputs[i] % 5 == 0) {multi5++;} }
+            }
+            
+            Console.WriteLine($"{multi3} múltiplos de 3;\n{multi5} múltiplos de 5.");
+        }
+
+        static void xDezesseis()
+        {
+            
+        }
+
         static void Main(string[] args)
         {
-            qNove();
+            xDezesseis();
         }
     }
 }
