@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace primeira_aula
 {
@@ -73,7 +72,7 @@ namespace primeira_aula
                 counter++;
             }
             counter--;
-            Console.WriteLine($"A média de idade dos {counter} alunos é {sum/counter}.");
+            Console.WriteLine($"A média de idade dos {counter} alunos é {(sum/counter).ToString("F")}.");
         }
 
         static void qCinco()
@@ -102,8 +101,8 @@ namespace primeira_aula
         {
             string candidato1 = "";
             string candidato2 = "";
-            int votos1 = 0;
-            int votos2 = 0;
+            double votos1 = 0.0;
+            double votos2 = 0.0;
           
           menu:
             Console.WriteLine("Digite C para CADASTRAR, V para VOTAR, ou A para apurar:");
@@ -120,6 +119,12 @@ namespace primeira_aula
             };
           
           modoCadastro:
+            if (candidato1 != "")
+            {
+                Console.WriteLine("CANDIDATOS JÁ REGISTRADOS");
+                goto menu;
+            }
+            
             Console.WriteLine("Insira a Senha:");
             if (Console.ReadLine() != "Pa$$w0rd")
             {
@@ -148,16 +153,35 @@ namespace primeira_aula
                 goto modoVoto;
             }
             Console.WriteLine("VOTO CONTABILIZADO");
+            Console.Beep();
             goto menu;
 
           modoApura:
+            Console.WriteLine("Insira a Senha:");
+            if (Console.ReadLine() != "Pa$$w0rd")
+            {
+                Console.WriteLine("SENHA INCORRETA");
+                goto modoApura;
+            }
+            
+            if (candidato1 == "" || candidato2 == "")
+            {
+                Console.WriteLine("CANDIDATOS NÃO CADASTRADOS");
+                goto menu;
+            }
+            
             if (votos1>votos2) 
             { 
-                Console.WriteLine($"{candidato1} venceu!");
+                Console.WriteLine($"{candidato1} venceu de {votos1} a {votos2} com {(votos1*(100/(votos1+votos2))).ToString("F")}% dos votos!");
             }
             else if (votos2>votos1)
             {
-                Console.WriteLine($"{candidato2} venceu!");
+                Console.WriteLine($"{candidato2} venceu de {votos2} a {votos1} com {(votos2*(100/(votos1+votos2))).ToString("F")}% dos votos!");
+            }
+            else if (votos1 == 0 && votos2 == 0)
+            {
+                Console.WriteLine("NENHUM VOTO REGISTRADO");
+                goto menu;
             }
             else
             {
@@ -165,9 +189,55 @@ namespace primeira_aula
             }
         }
 
+        static void qSete()
+        {
+            int cigDia = 0;
+            int anos = 0;
+            double preco = 0.00;
+            
+            Console.WriteLine("Quantos cigarros são fumados por dia?");
+            cigDia = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Quantos anos fumando?");
+            anos = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Qual o preço da carteira?");
+            preco = double.Parse(Console.ReadLine());
+            
+            double dinheiroGasto = ((cigDia*preco/20)*365)*anos;
+            Console.WriteLine($"Foram gastos R${dinheiroGasto.ToString("F")}.");
+        }
+
+        static void qOito()
+        {
+            Console.WriteLine("X:");
+            double x = Double.Parse(Console.ReadLine());
+            Console.WriteLine("Y:");
+            double y = Double.Parse(Console.ReadLine());
+
+            if (x % y != 0)
+            {
+                Console.WriteLine("X NÃO é múltiplo de Y");
+            }
+            else
+            {
+                Console.WriteLine("X é múltiplo de Y");
+            }
+        }
+
+        static void qNove()
+        {
+            Console.WriteLine("X:");
+            double x = Double.Parse(Console.ReadLine());
+            Console.WriteLine("Y:");
+            double y = Double.Parse(Console.ReadLine());
+            Console.WriteLine("Z:");
+            double z = Double.Parse(Console.ReadLine());
+
+            Console.WriteLine(x > (y+z) ? "X é maior que a soma de Y e Z" : "X não é maior que a soma de Y e Z");
+        }
+
         static void Main(string[] args)
         {
-            qSeis();
+            qNove();
         }
     }
 }
