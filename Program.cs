@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 
 namespace primeira_aula
 {
@@ -312,7 +313,7 @@ namespace primeira_aula
         static void xQuinze()
         {
             double[] inputs = new double[10];
-            Console.WriteLine("Insira dez dígitos");
+            Console.WriteLine("Insira dez números:");
             for (int i=0; i<10; i++)
             {
                 inputs[i] = Double.Parse(Console.ReadLine());
@@ -332,12 +333,145 @@ namespace primeira_aula
 
         static void xDezesseis()
         {
+            Console.WriteLine("Insira o salário:");
+            double salario = Double.Parse(Console.ReadLine());
+            double desconto = 0;
+            double imposto = 0;
+
+            if (salario > 2000)
+            {
+                imposto = 30;
+            }
+            else if (salario > 1200)
+            {
+                imposto = 25;
+            }
+            else if (salario > 600)
+            {
+                imposto = 20;
+            }
+            else
+            {
+                imposto = 0;
+            }
+            desconto = salario/100*imposto;
+            salario -= desconto;
+            if (imposto == 0)
+            {Console.WriteLine("Salário inafetado, isento de impostos");}
+            else {
+            Console.WriteLine($"Salário líquido de R${salario.ToString("F")}. Redução de impostos de {imposto}% (R${desconto.ToString("F")}).");
+            }
+        }
+
+        static void xDezessete()
+        {
+            Console.WriteLine("Insira um número para ver a tabuada:");
+            double multi = Double.Parse(Console.ReadLine());
+            int counter = 2;
             
+            while (true)
+            {
+                if (Console.ReadLine() == "-1")
+                {
+                    break;    
+                }
+                Console.WriteLine(multi*counter);
+                counter++;    
+            }
+            Console.WriteLine("ENCERRADO");
+        }
+
+        static void xDezoito()
+        {
+            Console.WriteLine("Quantas maçãs foram compradas?");
+            int macas = Int32.Parse(Console.ReadLine());
+            int indiv = macas % 12;
+            double preco = (indiv*1.30) + (((int)macas/12)*12);
+
+            Console.WriteLine($"R${preco.ToString("F")}");
         }
 
         static void Main(string[] args)
         {
-            xDezesseis();
+            Console.WriteLine("Escolha um exercício de 1 a 18:");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    xUm();
+                    break;
+
+                case "2":
+                    xDois();
+                    break;
+
+                case "3":
+                    xTres();
+                    break;
+
+                case "4":
+                    xQuatro();
+                    break;
+
+                case "5":
+                    xCinco();
+                    break;
+
+                case "6":
+                    xSeis();
+                    break;
+                
+                case "7":
+                    xSete();
+                    break;
+
+                case "8":
+                    xOito();
+                    break;
+
+                case "9":
+                    xNove();
+                    break;
+
+                case "10":
+                    xDez();
+                    break;
+
+                case "11":
+                    xOnze();
+                    break;
+
+                case "12":
+                    xDoze();
+                    break;
+
+                case "13":
+                    xTreze();
+                    break;
+
+                case "14":
+                    xQuatorze();
+                    break;
+
+                case "15":
+                    xQuinze();
+                    break;
+
+                case "16":
+                    xDezesseis();
+                    break;
+
+                case "17":
+                    xDezessete();
+                    break;
+
+                case "18":
+                    xDezoito();
+                    break;
+
+                default:
+                    Console.WriteLine("ERRO: O exercício não existe.");
+                    break;
+            }
         }
     }
 }
