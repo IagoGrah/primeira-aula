@@ -414,9 +414,7 @@ namespace primeira_aula
                 case "16": xDezesseis(); break;
                 case "17": xDezessete(); break;
                 case "18": xDezoito(); break;
-                default:
-                    Console.WriteLine("ERRO: O exercício não existe.");
-                    break;
+                default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
     }
