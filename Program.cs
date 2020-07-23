@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows;
 
 namespace primeira_aula
 {
@@ -393,7 +392,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Escolha um exercício de 1 a 18:");
+            Console.WriteLine("Escolha um exercício de 1 a 18, ou digite NEXT para acessar a segunda lista:");
             switch (Console.ReadLine())
             {
                 case "1": xUm(); break;
@@ -414,6 +413,7 @@ namespace primeira_aula
                 case "16": xDezesseis(); break;
                 case "17": xDezessete(); break;
                 case "18": xDezoito(); break;
+                case "NEXT": X2.Menu(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
