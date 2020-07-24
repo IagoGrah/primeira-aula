@@ -6,15 +6,30 @@ namespace primeira_aula
     {
         public static void yUm()
         {
-            double[] A = {5,8,13,75,32,98,34,12,76,1278,87,123,246,745,998};
-            double[] B = {7,543,31,54,134,123,765,345,23,7,3,9,3,2,169};
+            double[] A = new double[15];
+            double[] B = new double[15];
             double[] C = new double[15];
 
+            Console.Clear();
+            Console.WriteLine("Insira os 15 números de A:");
+            for (int i=0; i<15; i++)
+            {
+                A[i] = Double.Parse(Console.ReadLine());
+            }
+
+            Console.Clear();
+            Console.WriteLine("Insira os 15 números de B:");
+            for (int i=0; i<15; i++)
+            {
+                B[i] = Double.Parse(Console.ReadLine());
+            }
+            
             for (int i = 0; i < 15; i++)
             {
                 C[i] = A[i]-B[i];
             }
             
+            Console.Clear();
             Console.WriteLine("C: {0}", string.Join(", ", C));
         }
 
@@ -64,6 +79,38 @@ namespace primeira_aula
             }
         }
 
+        public static void yQuatro()
+        {
+            double[] A = new double[10];
+            double[] B = new double[10];
+
+            Console.Clear();
+            Console.WriteLine("Insira os 10 números de A:");
+            for (int i=0; i<10; i++)
+            {
+                A[i] = Double.Parse(Console.ReadLine());
+            }
+
+            Console.Clear();
+            Console.WriteLine("Insira os 10 números de B:");
+            for (int i=0; i<10; i++)
+            {
+                B[i] = Double.Parse(Console.ReadLine());
+            }
+
+            Console.Clear();
+            for (int i=0; i<10; i++)
+            {
+                if (A[i] != B[i])
+                {
+                    Console.WriteLine("A e B NÃO são arrays idênticos.");
+                    return;
+                }
+            }
+
+            Console.WriteLine("A e B são arrays idênticos.");
+        }
+
         public static void Menu()
         {
             Console.Clear();
@@ -74,7 +121,7 @@ namespace primeira_aula
                 case "1": yUm(); break;
                 case "2": yDois(); break;
                 case "3": yTres(); break;
-                // case "4": yQuatro(); break;
+                case "4": yQuatro(); break;
                 // case "5": yCinco(); break;
                 // case "6": ySeis(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
