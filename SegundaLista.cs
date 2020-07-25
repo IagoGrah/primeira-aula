@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace primeira_aula
 {
@@ -111,6 +112,68 @@ namespace primeira_aula
             Console.WriteLine("A e B são arrays idênticos.");
         }
 
+        public static void yCinco()
+        {
+            double[] arr = new double[15];
+
+            Console.Clear();
+            Console.WriteLine("Insira 15 números:");
+            for (int i=0; i<15; i++)
+            {
+                arr[i] = Double.Parse(Console.ReadLine());
+            }
+            
+            double avg = arr.Sum()/15;
+            Console.Clear();
+            Console.WriteLine("Média = " + avg);
+            int onAvg = 0;
+            int aboveAvg = 0;
+            int belowAvg = 0;
+            foreach (double item in arr)
+            {
+                if (item == avg) {onAvg++;}
+                else if (item < avg) {belowAvg++;}
+                else {aboveAvg++;}
+            }
+            Console.WriteLine("O array contém:");
+            Console.WriteLine(onAvg+" números na média,");
+            Console.WriteLine(aboveAvg+" números acima da média e");
+            Console.WriteLine(belowAvg+" números abaixo da média.");
+        }
+
+        public static void ySeis()
+        {
+            double[] A = new double[12];
+            double[] B = new double[12];
+            double[] C = new double[12];
+
+            Console.Clear();
+            Console.WriteLine("Insira os 12 números de A:");
+            for (int i=0; i<12; i++)
+            {
+                A[i] = Double.Parse(Console.ReadLine());
+            }
+            Array.Sort(A);
+
+            Console.WriteLine("Insira os 12 números de B:");
+            for (int i=0; i<12; i++)
+            {
+                B[i] = Double.Parse(Console.ReadLine());
+            }
+            Array.Sort(B);
+            Array.Reverse(B);
+
+            for (int i=0; i<12; i++)
+            {
+                C[i] = A[i] + B[i];
+            }
+            Array.Sort(C);
+            
+            Console.Clear();
+            Console.WriteLine("Array C:");
+            Console.WriteLine(string.Join(", ", C));
+        }
+
         public static void Menu()
         {
             Console.Clear();
@@ -122,8 +185,8 @@ namespace primeira_aula
                 case "2": yDois(); break;
                 case "3": yTres(); break;
                 case "4": yQuatro(); break;
-                // case "5": yCinco(); break;
-                // case "6": ySeis(); break;
+                case "5": yCinco(); break;
+                case "6": ySeis(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
