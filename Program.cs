@@ -392,31 +392,32 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Console.Clear();
-            Console.WriteLine("Escolha um exercício de 1 a 18, ou digite NEXT para acessar a segunda lista:");
-            switch (Console.ReadLine())
-            {
-                case "1": xUm(); break;
-                case "2": xDois(); break;
-                case "3": xTres(); break;
-                case "4": xQuatro(); break;
-                case "5": xCinco(); break;
-                case "6": xSeis(); break;
-                case "7": xSete(); break;
-                case "8": xOito(); break;
-                case "9": xNove(); break;
-                case "10": xDez(); break;
-                case "11": xOnze(); break;
-                case "12": xDoze(); break;
-                case "13": xTreze(); break;
-                case "14": xQuatorze(); break;
-                case "15": xQuinze(); break;
-                case "16": xDezesseis(); break;
-                case "17": xDezessete(); break;
-                case "18": xDezoito(); break;
-                case "NEXT": X2.Menu(); break;
-                default: Console.WriteLine("ERRO: O exercício não existe."); break;
-            }
+            X3.zTres();
+            // Console.Clear();
+            // Console.WriteLine("Escolha um exercício de 1 a 18, ou digite NEXT para acessar a próxima lista:");
+            // switch (Console.ReadLine())
+            // {
+            //     case "1": xUm(); break;
+            //     case "2": xDois(); break;
+            //     case "3": xTres(); break;
+            //     case "4": xQuatro(); break;
+            //     case "5": xCinco(); break;
+            //     case "6": xSeis(); break;
+            //     case "7": xSete(); break;
+            //     case "8": xOito(); break;
+            //     case "9": xNove(); break;
+            //     case "10": xDez(); break;
+            //     case "11": xOnze(); break;
+            //     case "12": xDoze(); break;
+            //     case "13": xTreze(); break;
+            //     case "14": xQuatorze(); break;
+            //     case "15": xQuinze(); break;
+            //     case "16": xDezesseis(); break;
+            //     case "17": xDezessete(); break;
+            //     case "18": xDezoito(); break;
+            //     case "NEXT": X2.Menu(); break;
+            //     default: Console.WriteLine("ERRO: O exercício não existe."); break;
+            // }
         }
     }
 }

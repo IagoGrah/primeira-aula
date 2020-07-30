@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace primeira_aula
 {
-    class X2
+    public class X2
     {
         public static void yUm()
         {
@@ -178,7 +178,7 @@ namespace primeira_aula
         {
             Console.Clear();
             Console.WriteLine("EXERCÍCIOS DE ARRAY");
-            Console.WriteLine("Escolha um exercício de 1 a 6:");
+            Console.WriteLine("Escolha um exercício de 1 a 6, ou digite NEXT para acessar a próxima lista:");
             switch (Console.ReadLine())
             {
                 case "1": yUm(); break;
@@ -187,6 +187,7 @@ namespace primeira_aula
                 case "4": yQuatro(); break;
                 case "5": yCinco(); break;
                 case "6": ySeis(); break;
+                case "NEXT": X3.Menu(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
