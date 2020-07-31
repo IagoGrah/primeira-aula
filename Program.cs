@@ -392,7 +392,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            X3.zTres();
+            X3.zSete();
             // Console.Clear();
             // Console.WriteLine("Escolha um exercício de 1 a 18, ou digite NEXT para acessar a próxima lista:");
             // switch (Console.ReadLine())

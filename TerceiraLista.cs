@@ -117,7 +117,79 @@ namespace primeira_aula
 
         public static void zQuatro()
         {
+            double[] A = new double[5];
+            double sum = 0;
             
+            Console.Clear();
+            Console.WriteLine("Insira 5 números:");
+            for (int i=0; i<5; i++)
+            {
+                double input = Double.Parse(Console.ReadLine());
+                A[i] = input;
+                if (input%2 != 0) {sum+=input;}
+            }
+            Console.WriteLine("Soma dos números ímpares: "+sum);
+        }
+
+        public static void zCinco()
+        {
+            double[] arr = new double[10];
+            double positive = 0;
+            
+            Console.Clear();
+            Console.WriteLine("Insira 10 números:");
+            for (int i=0; i<10; i++)
+            {
+                double input = Double.Parse(Console.ReadLine());
+                arr[i] = input;
+                if (input >= 0) {positive++;}
+            }
+            Console.WriteLine(positive+" números positivos.");
+        }
+
+        public static void zSeis()
+        {
+            double[] Q = new double[10];
+            double biggest = 0;
+            int position = 0;
+            double input;
+
+            Console.WriteLine("Insira 10 números positivos:");
+            for (int i=0; i<10; i++)
+            {
+                do
+                {
+                    input = Double.Parse(Console.ReadLine());
+                    if (input < 0)
+                    {
+                        Console.WriteLine("Apenas números POSITIVOS!");
+                    }
+                }
+                while (input < 0);
+                Q[i] = input;
+                if (Q[i] >= biggest)
+                {
+                    biggest = Q[i];
+                    position = i;
+                }
+            }
+            Console.WriteLine("O maior número é "+biggest+", por último na posição "+position+".");
+        }
+
+        public static void zSete()
+        {
+            double[] A = new double[10];
+            int same = 0;
+            double input;
+
+            Console.WriteLine("Insira 10 números:");
+            for (int i=0; i<10; i++)
+            {
+                input = Double.Parse(Console.ReadLine());
+                A[i] = input;
+                if (input == i) {same++;}
+            }
+            Console.WriteLine("O valor de um item é igual à sua posição "+same+" vezes neste array.");
         }
 
         public static void Menu()
@@ -130,9 +202,9 @@ namespace primeira_aula
                 case "1": zUm(); break;
                 case "2": zDois(); break;
                 case "3": zTres(); break;
-                // case "4": zQuatro(); break;
-                // case "5": zCinco(); break;
-                // case "6": zSeis(); break;
+                case "4": zQuatro(); break;
+                case "5": zCinco(); break;
+                case "6": zSeis(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
