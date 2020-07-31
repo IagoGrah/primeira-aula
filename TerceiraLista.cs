@@ -192,6 +192,60 @@ namespace primeira_aula
             Console.WriteLine("O valor de um item é igual à sua posição "+same+" vezes neste array.");
         }
 
+        public static void zOito()
+        {
+            char[] arr = new char[10];
+            int vowels = 0;
+            
+            Console.WriteLine("Insira 10 letras do alfabeto:");
+            for (int i=0; i<10; i++)
+            {
+                bool isChar = Char.TryParse(Console.ReadLine(), out char input);
+                
+                if (!isChar || !Char.IsLetter(input))
+                {
+                    Console.WriteLine("ERRO! Inválido.");
+                    return;
+                }
+                
+                arr[i] = input;
+                switch (char.ToUpper(input))
+                {
+                    case 'A':
+                    case 'E': 
+                    case 'I':
+                    case 'O':
+                    case 'U':
+                        vowels++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine("O array contém "+vowels+" vogais.");
+        }
+
+        public static void zNove()
+        {
+            char[] arr = new char[10];
+            
+            Console.WriteLine("Insira 10 letras do alfabeto:");
+            for (int i=0; i<10; i++)
+            {
+                bool isChar = Char.TryParse(Console.ReadLine(), out char input);
+                
+                if (!isChar || !Char.IsLetter(input))
+                {
+                    Console.WriteLine("ERRO! Inválido.");
+                    return;
+                }
+
+                arr[i] = input;
+            }
+            string frase = new string(arr);
+            Console.WriteLine(frase);
+        }
+
         public static void Menu()
         {
             Console.Clear();
@@ -205,6 +259,9 @@ namespace primeira_aula
                 case "4": zQuatro(); break;
                 case "5": zCinco(); break;
                 case "6": zSeis(); break;
+                case "7": zSete(); break;
+                case "8": zOito(); break;
+                case "9": zNove(); break;
                 default: Console.WriteLine("ERRO: O exercício não existe."); break;
             }
         }
