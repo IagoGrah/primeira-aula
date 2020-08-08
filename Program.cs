@@ -51,38 +51,38 @@ namespace primeira_aula
 
         static void xQuatro()
         {
-            string userInput = "";
+            string userInput = null;
             double counter = 0;
             double sum = 0;
             double ageInput = 0;
             
-            Console.WriteLine("Insira as idades dos alunos, quando terminar insira 0");
+            Console.WriteLine("Insira as idades dos alunos, quando terminar insira 0:");
             
             while (userInput != "0")
             {
-              waiting:
                 userInput = Console.ReadLine();
-                bool isIt = Double.TryParse(userInput, out ageInput);
-                if (!isIt)
+                bool isAge = Double.TryParse(userInput, out ageInput);
+                if (!isAge)
                 {
                     Console.WriteLine("ERRO, insira um número inteiro.");
-                    goto waiting;    
+                    continue;
                 }
                 sum += ageInput;
                 counter++;
             }
-            counter--;
-            Console.WriteLine($"A média de idade dos {counter} alunos é {(sum/counter).ToString("F")}.");
+            Console.WriteLine($"A média de idade dos {counter-1} alunos é {(sum/(counter-1)).ToString("F")}.");
         }
 
         static void xCinco()
         {
             int[] idades = new int[5];
+            string[] nomes = new string[5];
+            string[] nomesNaFaixa = new string[5];
 
             for (int i=0; i<5; i++)
             {
                 System.Console.WriteLine($"Nome da Mulher {i+1}:");
-                Console.ReadLine();
+                nomes[i] = Console.ReadLine();
                 System.Console.WriteLine($"Idade da Mulher {i+1}:");
                 idades[i] = Int32.Parse(Console.ReadLine());
             }
@@ -92,9 +92,15 @@ namespace primeira_aula
                 if (idades[i] < 36 && idades[i] > 17)
                 {
                     naFaixa++;
+                    nomesNaFaixa[i] = nomes[i];
                 }
             }
-            Console.WriteLine($"{naFaixa*20}% das mulheres estão na faixa entre 18 e 35 anos.");
+            Console.WriteLine($"{naFaixa*20}% das mulheres estão na faixa entre 18 e 35 anos:");
+            foreach (var name in nomesNaFaixa)
+            {
+                if (!String.IsNullOrEmpty(name))
+                {Console.Write(name+" ");}
+            }
         }
 
         static void xSeis()
@@ -274,13 +280,23 @@ namespace primeira_aula
 
         static void xDoze()
         {
-            System.Console.WriteLine("Insira quatro números:");
-            double num1 = Double.Parse(Console.ReadLine());
-            double num2 = Double.Parse(Console.ReadLine());
-            double num3 = Double.Parse(Console.ReadLine());
-            double num4 = Double.Parse(Console.ReadLine());
+            var arr = new double[4];
+            double sumEven = 0;
+            double sumOdd = 0;
 
-            Console.WriteLine($"Soma: {num1+num2+num3+num4}");
+            System.Console.WriteLine($"Insira {arr.Length} números:");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                var input = Double.Parse(Console.ReadLine());
+                arr[i] = input;
+            }
+            foreach (var num in arr)
+            {
+                if (num % 2 == 0) {sumEven += num;}
+                else {sumOdd += num;}
+            }
+            Console.WriteLine($"Soma dos pares: {sumEven}");
+            Console.WriteLine($"Soma dos ímpares: {sumOdd}");
         }
 
         static void xTreze()
