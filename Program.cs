@@ -384,16 +384,19 @@ namespace primeira_aula
             double multi = Double.Parse(Console.ReadLine());
             int counter = 2;
             
+            Console.Clear();
+            Console.WriteLine("Aperte ENTER para ver o próximo número, ou X para encerrar.");
+
             while (true)
             {
-                if (Console.ReadLine() == "-1")
+                if (Console.ReadKey().Key == ConsoleKey.X)
                 {
                     break;    
                 }
-                Console.WriteLine(multi*counter);
+                Console.WriteLine($"{multi} x {counter} = {multi*counter}   ");
                 counter++;    
             }
-            Console.WriteLine("ENCERRADO");
+            Console.WriteLine("\nENCERRADO");
         }
 
         static void xDezoito()

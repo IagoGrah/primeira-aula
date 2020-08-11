@@ -46,7 +46,23 @@ namespace primeira_aula
             {
                 arr[i] = Double.Parse(Console.ReadLine());
             }
-            Console.WriteLine(arr.Length != arr.Distinct().Count() ? "CONTÉM repetição." : "NÃO contém repetição.");
+            
+            // Console.WriteLine(arr.Length != arr.Distinct().Count() ? "CONTÉM repetição." : "NÃO contém repetição.");
+
+            bool hasRepeat = false;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[j] == arr[i] && i != j)
+                    {
+                        hasRepeat = true;
+                        break;
+                    }
+                }
+                if (hasRepeat) {break;}
+            }
+            Console.WriteLine(hasRepeat ? "CONTÉM repetição." : "NÃO contém repetição.");
         }
         
         public static void zTres()
