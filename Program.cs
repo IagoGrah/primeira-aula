@@ -301,7 +301,7 @@ namespace primeira_aula
 
         static void xTreze()
         {
-            double biggest = 0.0;
+            double biggest = Double.MinValue;
             System.Console.WriteLine("Insira dez números:");
             for (int c=1; c<=10; c++)
             {
