@@ -158,7 +158,7 @@ namespace primeira_aula
             {
                 double input = Double.Parse(Console.ReadLine());
                 arr[i] = input;
-                if (input >= 0) {positive++;}
+                if (input > 0) {positive++;}
             }
             Console.WriteLine(positive+" números positivos.");
         }
