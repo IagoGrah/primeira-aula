@@ -258,8 +258,11 @@ namespace primeira_aula
 
                 arr[i] = input;
             }
-            string frase = new string(arr);
-            Console.WriteLine(frase);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i%2==0) {Console.Write(arr[i]);}
+            }
         }
 
         public static void Menu()
